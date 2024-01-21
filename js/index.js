@@ -11,13 +11,14 @@ const copyright  = document.createElement("p");
 
 console.log(footer);
 
+
 copyright.innerHTML = `Allison Berruecos ${thisYear}`
 
 footer.appendChild(copyright);
 
 //skills
 
-const skills = ["Javascript", "HTML", "Microsoft office", "Microsoft Excel", "Customer Service"];
+const skills = ["Javascript", "HTML", "CSS", "Git/Github", "VSCode"];
 
 const skillsSection = document.getElementById("skills");
 

@@ -20,12 +20,12 @@ Section {
  }
 
  li {
-    display:block;
+    display: flex;
+    flex-direction: column;
  }
 
 
  ul {
-    /* text-align: center; */
     list-style-position: inside;
  }
 
@@ -78,6 +78,12 @@ a:hover {
   font-size: large;
 }
 
+#skills li {
+  border:rgb(24, 41, 32);
+  display: flex; 
+  flex-direction: column;
+}
+
 #leave_message {
 justify-content: center; 
 display: flex;
@@ -89,14 +95,9 @@ flex-basis: auto;
 .topnav {
   background-color: rgb(24, 41, 32);
   padding: 1rem;
- 
-}
-
-.topnav {
   position: sticky;
   top: 0;
-  
-  }
+}
 
 .form-row > label {
     padding: .5em 1em .5em 0;
