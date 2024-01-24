@@ -5,29 +5,38 @@ body {
   padding: 1 rem;
   font-family: Comfortaa, sans-serif;
   color: rgb(226, 234, 234);
-  }
+}
 
 Section {
     background-color: rgb(101, 95, 107);
     margin: 1rem 1rem;
     padding: .5rem 1rem;
     border: 2px solid (49, 73, 52);
-    border-radius: 3px;
- }
+    border-radius: .8rem;
+}
 
- p {
+p {
   margin: 1rem;
- }
+}
 
- li {
+
+li {
     display: flex;
-    flex-direction: column;
- }
+    flex-wrap: wrap;
+}
 
 
- ul {
+ul {
     list-style-position: inside;
- }
+
+}
+
+#name {
+ color: rgb(138, 179, 183);
+ font-weight:bolder;
+ padding: 2rem;
+}
+
 
 h1, h2 {
     font-size: 30px;
@@ -37,10 +46,11 @@ h1, h2 {
     Margin: 0 1rem;
 }
 
+
 label {
-background-color: rgb(58, 35, 70);
-font-family: Arial;
-Margin: auto;
+  background-color: rgb(58, 35, 70);
+  font-family: Arial;
+  Margin: auto;
 }
 
 input, 
@@ -54,42 +64,42 @@ textarea {
 }
 
 button[type="submit"] {
-background-color: azure;
-border: 3px solid darkblue;
-border-radius: 5px;
-padding: .25rem;
-margin: auto;
+  background-color: azure;
+  border: 3px solid darkblue;
+  border-radius: 5px;
+  padding: .25rem;
+  margin: auto;
 } 
+
+
+button[type="submit"]:hover {
+  color:hotpink;
+  font-size: large;
+}
 
 #experience ul {
     display: flex;
     flex-direction: column;
-}
+ }
 
 a {
   font-family: Comfortaa, sans-serif;
   font-size: medium;
   color: rgb(139, 231, 223);
   text-decoration: none;
-}
+ }
 
 a:hover {
   color:hotpink;
   font-size: large;
 }
 
-#skills li {
-  border:rgb(24, 41, 32);
-  display: flex; 
-  flex-direction: column;
-}
-
 #leave_message {
-justify-content: center; 
-display: flex;
-padding: 3rem;
-flex-direction: column;
-flex-basis: auto;
+  justify-content: center; 
+  display: flex;
+  padding: 3rem;
+  flex-direction: column;
+  flex-basis: auto;
 }
 
 .topnav {
@@ -97,13 +107,51 @@ flex-basis: auto;
   padding: 1rem;
   position: sticky;
   top: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer {
+  text-align: center;
 }
 
 .form-row > label {
     padding: .5em 1em .5em 0;
-  }
+}
 
-  .form-row > input,
-  .form-row > button {
+.form-row > input,
+.form-row > button {
     padding: .5em;
-  }
+}
+
+/* .list {
+  list-style-type:none;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.list li {
+  color:rgb(255, 255, 255);
+  padding: 10px;
+  border: 2px solid #199621;
+  margin-right: 10px;
+  border-radius: .8em;
+} */
+
+@media (max-width: 650px) {
+  #expereince ul 
+  padding-left: 0;
+
+}
+ 
+.nav-bar{
+  font-size: 10px;
+}

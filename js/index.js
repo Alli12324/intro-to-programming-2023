@@ -20,7 +20,7 @@ footer.appendChild(copyright);
 
 const skills = ["Javascript", "HTML", "CSS", "Git/Github", "VSCode"];
 
-const skillsSection = document.getElementById("skills");
+const skillsSection = document.querySelector('.skills');
 
 const skillsList = skillsSection.querySelector("ul")
 
@@ -46,13 +46,8 @@ const hideMessages = () => {
  
 hideMessages();
 
-// if (messageList.childElementCount == 0) {
-//   messageSection.style.display = "none"();
-// };
 
 const messageForm = document.getElementById("leave_message");
-
-
 
 messageForm.addEventListener("submit", (event) => {
 
