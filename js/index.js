@@ -32,56 +32,102 @@ for (let i =0; i < skills.length; i++) {
 }
 
 
+// const messageSection = document.getElementById("messages");
+
+//     const messageList = messageSection.querySelector("ul");
+
+// const hideMessages = () => {
+//   if (messageList.childElementCount == 0) {
+//     messageSection.style.display = "none";
+//   };
+// };
+ 
+// hideMessages();
+
 //Message Form
 
-const messageSection = document.getElementById("messages");
+let messageForm = document.forms["leave_message"];
+    messageForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    const messageList = messageSection.querySelector("ul");
+        let userName = event.target.usersName.value;
+        let userEmail = event.target.usersEmail.value;
+        let userMessage = event.target.usersMessage.value;
 
-const hideMessages = () => {
-  if (messageList.childElementCount == 0) {
-    messageSection.style.display = "none";
-  };
-};
+        console.log("Name: " + userName);
+        console.log("Email: " + userEmail);
+        console.log("Message: " + userMessage);
+
+        let messageSection = document.getElementById("messages");
+        let messageList = messageSection.querySelector("ul");
+        let newMessage = document.createElement("li");
+
+        newMessage.innerHTML = 
+        `<a href='mailto:${userEmail}'>${userName} </a>` +
+        `<span> wrote: ${userMessage}</span>`;
+
+            let removeButton = document.createElement("button");
+            removeButton.innerText = "Remove";
+            removeButton.addEventListener("click", function() {
+                let entry = removeButton.parentNode;
+                entry.remove();
+            });
+
+            newMessage.appendChild(removeButton);
+            messageList.appendChild(newMessage);
+
+        messageForm.reset();
+    });
+
+// const messageSection = document.getElementById("messages");
+
+//     const messageList = messageSection.querySelector("ul");
+
+// const hideMessages = () => {
+//   if (messageList.childElementCount == 0) {
+//     messageSection.style.display = "none";
+//   };
+// };
  
-hideMessages();
+// hideMessages();
 
 
-const messageForm = document.getElementById("leave_message");
+// const messageForm = document.getElementById("leave_message");
 
-messageForm.addEventListener("submit", (event) => {
+// messageForm.addEventListener("submit", (event) => {
 
-    event.preventDefault();
+//     event.preventDefault();
 
 
-    const usersName=event.target.querySelector('[name="usersName"]').value;
-    const usersEmail= event.target.querySelector('[name="usersEmail"]').value;
-    const usersMessage= event.target.querySelector('[name="usersMessage"]').value;
+//     const usersName=event.target.querySelector('[name="usersName"]').value;
+//     const usersEmail= event.target.querySelector('[name="usersEmail"]').value;
+//     const usersMessage= event.target.querySelector('[name="usersMessage"]').value;
 
-    console.log(usersName, usersEmail, usersMessage);
+//     console.log(usersName, usersEmail, usersMessage);
 
-    const newMessage = document.createElement("li");
+//     const newMessage = document.createElement("li");
 
-    newMessage.innerHTML= 
-    `<a href="mailto: ${usersEmail}">${usersName}</a><span> typed: ${usersMessage}</span>`
+//     newMessage.innerHTML= 
+//     `<a href="mailto: ${usersEmail}">${usersName}</a><span> typed: ${usersMessage}</span>`
 
-    const removeButton = document.createElement("button");
-    removeButton.innerText="remove";
-    removeButton.type="button";
+//     const removeButton = document.createElement("button");
+//     removeButton.innerText="remove";
+//     removeButton.type="button";
 
-    removeButton.addEventListener("click", (event) => {
-    let entry= event.target.parentNode
-    entry.remove();
-    })
+//     removeButton.addEventListener("click", (event) => {
+//     let entry= event.target.parentNode
+//     entry.remove();
+//     })
 
-    newMessage.appendChild(removeButton);
+//     newMessage.appendChild(removeButton);
 
-    messageList.append(newMessage);
+//     messageList.append(newMessage);
 
-    event.target.reset()
+//     event.target.reset()
     
-    hideMessages();
-})
+//     // hideMessages();
+// })
+
 
 // ajax
 

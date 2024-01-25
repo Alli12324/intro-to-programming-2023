@@ -112,9 +112,10 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.skills {
+.skills ul {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 footer {
@@ -147,11 +148,17 @@ footer {
 } */
 
 @media (max-width: 650px) {
-  #expereince ul 
-  padding-left: 0;
-
-}
  
-.nav-bar{
+.topnav {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 10px;
-}
+  margin: 0;
+  padding: .2 rem;
+  justify-content:space-between;
+
+ }
+
+.topnav a {
+  font-size: 10px;
+}}
+
