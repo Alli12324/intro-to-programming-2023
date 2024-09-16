@@ -11,15 +11,16 @@ const copyright  = document.createElement("p");
 
 console.log(footer);
 
+
 copyright.innerHTML = `Allison Berruecos ${thisYear}`
 
 footer.appendChild(copyright);
 
 //skills
 
-const skills = ["Javascript", "HTML", "Microsoft office", "Microsoft Excel", "Customer Service"];
+const skills = ["Javascript", "HTML", "CSS", "Git/Github", "VSCode"];
 
-const skillsSection = document.getElementById("skills");
+const skillsSection = document.querySelector('.skills');
 
 const skillsList = skillsSection.querySelector("ul")
 
@@ -31,61 +32,102 @@ for (let i =0; i < skills.length; i++) {
 }
 
 
+// const messageSection = document.getElementById("messages");
+
+//     const messageList = messageSection.querySelector("ul");
+
+// const hideMessages = () => {
+//   if (messageList.childElementCount == 0) {
+//     messageSection.style.display = "none";
+//   };
+// };
+ 
+// hideMessages();
+
 //Message Form
 
-const messageSection = document.getElementById("messages");
+let messageForm = document.forms["leave_message"];
+    messageForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    const messageList = messageSection.querySelector("ul");
+        let userName = event.target.usersName.value;
+        let userEmail = event.target.usersEmail.value;
+        let userMessage = event.target.usersMessage.value;
 
-const hideMessages = () => {
-  if (messageList.childElementCount == 0) {
-    messageSection.style.display = "none";
-  };
-};
- 
-hideMessages();
+        console.log("Name: " + userName);
+        console.log("Email: " + userEmail);
+        console.log("Message: " + userMessage);
 
-// if (messageList.childElementCount == 0) {
-//   messageSection.style.display = "none"();
+        let messageSection = document.getElementById("messages");
+        let messageList = messageSection.querySelector("ul");
+        let newMessage = document.createElement("li");
+
+        newMessage.innerHTML = 
+        `<a href='mailto:${userEmail}'>${userName} </a>` +
+        `<span> wrote: ${userMessage}</span>`;
+
+            let removeButton = document.createElement("button");
+            removeButton.innerText = "Remove";
+            removeButton.addEventListener("click", function() {
+                let entry = removeButton.parentNode;
+                entry.remove();
+            });
+
+            newMessage.appendChild(removeButton);
+            messageList.appendChild(newMessage);
+
+        messageForm.reset();
+    });
+
+// const messageSection = document.getElementById("messages");
+
+//     const messageList = messageSection.querySelector("ul");
+
+// const hideMessages = () => {
+//   if (messageList.childElementCount == 0) {
+//     messageSection.style.display = "none";
+//   };
 // };
-
-const messageForm = document.getElementById("leave_message");
-
-
-
-messageForm.addEventListener("submit", (event) => {
-
-    event.preventDefault();
+ 
+// hideMessages();
 
 
-    const usersName=event.target.querySelector('[name="usersName"]').value;
-    const usersEmail= event.target.querySelector('[name="usersEmail"]').value;
-    const usersMessage= event.target.querySelector('[name="usersMessage"]').value;
+// const messageForm = document.getElementById("leave_message");
 
-    console.log(usersName, usersEmail, usersMessage);
+// messageForm.addEventListener("submit", (event) => {
 
-    const newMessage = document.createElement("li");
+//     event.preventDefault();
 
-    newMessage.innerHTML= 
-    `<a href="mailto: ${usersEmail}">${usersName}</a><span> typed: ${usersMessage}</span>`
 
-    const removeButton = document.createElement("button");
-    removeButton.innerText="remove";
-    removeButton.type="button";
+//     const usersName=event.target.querySelector('[name="usersName"]').value;
+//     const usersEmail= event.target.querySelector('[name="usersEmail"]').value;
+//     const usersMessage= event.target.querySelector('[name="usersMessage"]').value;
 
-    removeButton.addEventListener("click", (event) => {
-    let entry= event.target.parentNode
-    entry.remove();
-    })
+//     console.log(usersName, usersEmail, usersMessage);
 
-    newMessage.appendChild(removeButton);
+//     const newMessage = document.createElement("li");
 
-    messageList.append(newMessage);
+//     newMessage.innerHTML= 
+//     `<a href="mailto: ${usersEmail}">${usersName}</a><span> typed: ${usersMessage}</span>`
 
-    event.target.reset()
+//     const removeButton = document.createElement("button");
+//     removeButton.innerText="remove";
+//     removeButton.type="button";
+
+//     removeButton.addEventListener("click", (event) => {
+//     let entry= event.target.parentNode
+//     entry.remove();
+//     })
+
+//     newMessage.appendChild(removeButton);
+
+//     messageList.append(newMessage);
+
+//     event.target.reset()
     
-    hideMessages();
-})
+//     // hideMessages();
+// })
+
 
 // ajax
 
